@@ -1,0 +1,13 @@
+body{font-family: 'Roboto', sans-serif;}
+.float-left{position: fixed; bottom: 0; left: 0; padding: 20px; height: 100vh; background-size: auto 100%; background-image: url("../assets/images/2.jpg");  display:flex;  align-items:center;}
+.float-left h1{ color: #fff; font-size: 72px;}
+.float-left h2{ font-size: 27px; margin-bottom: 20px;}
+.float-left p{color: #fff; font-size: 16px; }
+.float-right{ padding: 20px; position: absolute; height: 100%; right: 0;}
+.output-div{ padding: 10px; margin-bottom: 20px; border: dotted 2px #ddd; border-radius: 10px; word-wrap: break-word;}
+.float-right p{ color: #000; font-size: 14px; line-height: normal;}
+
+@media only screen and (max-width: 767px) {
+  .float-left{ height: auto;}
+  h1{ font-size: 40px;}
+}

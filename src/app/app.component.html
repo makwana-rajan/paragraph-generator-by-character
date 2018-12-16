@@ -1,0 +1,47 @@
+<div class="container-fluid ">
+  <div class="row">
+    <div class="float-left col-lg-6 col-md-6 col-sm-12">
+      <div>
+        <h1>Paragraph Generator</h1>
+        <P>Your project looks great on any device. Content can be easily read and a user understands freely what you
+          wanted to say him or her.</P>
+      </div>
+    </div>
+    <div class="float-right col-lg-6 col-md-6 col-sm-12">
+      <h2>About</h2>
+      <p>Node.js is a platform built on Chrome's JavaScript runtime for easily building fast and scalable network
+        applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient,
+        perfect for data-intensive real-time applications that run across distributed devices.For deploying Angular 6
+        app to Heroku you can follow most of the steps in this post however there are some config changes in Angular 6
+        from Angular 2/4 which are needed.For deploying Angular 6 app to Heroku you can follow most of the steps in
+        this post however there are some config changes in Angular 6 from Angular 2/4 which are needed.</p>
+      <form>
+        <div class="form-group">
+          <label>Select number of character:</label>
+          <select class="form-control" (change)="onSelectCharLimit($event.target.value)">
+            <option value="100" selected>100</option>
+            <option value="200">200</option>
+            <option value="300">300</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <label class="col-lg-6 col-md-6 col-sm-12">Write Content</label>
+            <label class="col-lg-6 col-md-6 col-sm-12">Number of Character: {{numberOfChar}}</label>
+          </div>
+          <textarea class="form-control" rows="7" cols="90" [(ngModel)]="textContent" (keyup)="onContentChange($event.target.value)"
+            name="textContentName" #textContentName="ngModel"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Formated Content</label>
+          <div class="output-div row" *ngFor="let content of formatedContent; let i = index">
+            <div class="pl-2">{{i + 1}}.</div>
+            <div class="col-11">
+            <span class="pl-4">{{content}}</span>
+          </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
