@@ -19,7 +19,7 @@ export class AppComponent {
   }
 
   onSelectCharLimit(value) {
-    this.charLimit = value;
+    this.charLimit = Number(value);
     this.endPosition = value;
     this.onContentChange(this.textContent);
   }
@@ -27,8 +27,9 @@ export class AppComponent {
   onContentChange(value) {
     this.numberOfChar = value.replace(/\s/g, '').length;
     this.numberOfTimeIteration = Number((this.numberOfChar / this.charLimit).toString().charAt(0)) + 1;
-    this.endPosition = this.numberOfChar;
     this.formatedContent.length = 0;
+    this.endPosition = 0;
+
     for (let i = 1; i <= this.numberOfTimeIteration; i++) {
       if (i === 1) {
         this.startPosition = 0;

@@ -104,15 +104,15 @@ var AppComponent = /** @class */ (function () {
         this.numberOfChar = 0;
     }
     AppComponent.prototype.onSelectCharLimit = function (value) {
-        this.charLimit = value;
+        this.charLimit = Number(value);
         this.endPosition = value;
         this.onContentChange(this.textContent);
     };
     AppComponent.prototype.onContentChange = function (value) {
         this.numberOfChar = value.replace(/\s/g, '').length;
         this.numberOfTimeIteration = Number((this.numberOfChar / this.charLimit).toString().charAt(0)) + 1;
-        this.endPosition = this.numberOfChar;
         this.formatedContent.length = 0;
+        this.endPosition = 0;
         for (var i = 1; i <= this.numberOfTimeIteration; i++) {
             if (i === 1) {
                 this.startPosition = 0;
